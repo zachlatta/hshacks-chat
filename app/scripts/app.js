@@ -6,9 +6,10 @@ angular.module('hshacksChatApp', [
   'ngSanitize',
   'ngRoute',
   'firebase',
-  'luegg.directives'
+  'luegg.directives',
+  'angularytics'
 ])
-  .config(function ($routeProvider, $locationProvider) {
+  .config(function ($routeProvider, $locationProvider, AngularyticsProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/chat.html',
@@ -21,4 +22,9 @@ angular.module('hshacksChatApp', [
     if (window.history && window.history.pushState) {
       $locationProvider.html5Mode(true);
     }
+
+    AngularyticsProvider.setEventHandlers(['GoogleUniversal']);
+  })
+  .run(function (Angularytics) {
+    Angularytics.init();
   });
