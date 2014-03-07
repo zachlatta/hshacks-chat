@@ -353,6 +353,19 @@ module.exports = function (grunt) {
         configFile: 'karma.conf.js',
         singleRun: true
       }
+    },
+
+    buildcontrol: {
+      options: {
+        push: true
+      },
+      dokku: {
+        options: {
+          remote: 'dokku@zach.xxx:chat.hshacks.com',
+          commit: true,
+          branch: 'master'
+        }
+      }
     }
   });
 
