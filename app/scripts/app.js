@@ -4,13 +4,15 @@ angular.module('hshacksChatApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'firebase',
+  'luegg.directives'
 ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/chat.html',
+        controller: 'ChatCtrl'
       })
       .otherwise({
         redirectTo: '/'

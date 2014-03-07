@@ -1,0 +1,33 @@
+<div class="header">
+  <img src="/images/hshacks_logo.png" class="logo">
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="chat">
+      <div scroll-glue class="chat-area">
+        <ul class="media-list">
+          <li class="media" ng-repeat="message in messages | orderByPriority">
+            <a class="pull-left">
+              <img class="media-object chat-profile" src="{{message.image}}">
+            </a>
+            <div class="media-body">
+              <h4 class="media-heading">{{message.user}}</h4>
+              {{message.message}}
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="chat-input">
+        <form ng-submit="addMessage()">
+          <div class="input-group input-group-lg">
+            <input type="text" class="form-control" ng-model="message">
+            <span class="input-group-btn">
+              <input class="btn btn-default" type="submit"></input>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
