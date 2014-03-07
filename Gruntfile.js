@@ -415,6 +415,11 @@ module.exports = function (grunt) {
     'htmlmin'
   ]);
 
+  grunt.registerTask('deploy', [
+    'build',
+    'buildcontrol:dokku'
+  ]);
+
   grunt.registerTask('default', [
     'newer:jshint',
     'test',
