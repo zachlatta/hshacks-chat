@@ -13,7 +13,7 @@
             </a>
             <div class="media-body">
               <h4 class="media-heading">{{message.user}}</h4>
-              {{message.message}}
+              <span ng-bind-html="message.message | linky"></span>
             </div>
           </li>
         </ul>
