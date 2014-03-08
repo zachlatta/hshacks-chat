@@ -2,7 +2,7 @@
 
 angular.module('hshacksChatApp')
   .controller('ChatCtrl', function ($scope, Chat) {
-    $scope.user = 'Guest ';
+    $scope.user = 'Guest';
     $scope.profilePicture = 'http://i.imgur.com/Vn018nS.jpg';
     $scope.messages = Chat;
     $scope.addMessage = function () {
